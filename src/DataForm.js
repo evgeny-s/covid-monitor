@@ -25,6 +25,10 @@ function DataForm({onSubmit}) {
       city,
       amount,
     });
+
+    setDate('');
+    setCity('');
+    setAmount('');
   }
 
   return (
