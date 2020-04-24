@@ -10,7 +10,12 @@ function DataChart({items}) {
       currentCities.add(item.city);
     });
 
-    setCities(currentCities.entries());
+    let uniqueCities = [];
+    for (let city of currentCities.entries()) {
+      uniqueCities.push(city[0]);
+    }
+
+    setCities(uniqueCities);
   }, []);
 
   let data = [];
@@ -30,7 +35,9 @@ function DataChart({items}) {
           <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">Select City</label>
           <select className="custom-select mr-sm-2" id="inlineFormCustomSelect">
             <option>...Select city...</option>
-
+            {
+              cities.map((city) => <option key={city}>{city}</option>)
+            }
           </select>
         </div>
       </div>
