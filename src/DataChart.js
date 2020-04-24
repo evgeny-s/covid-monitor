@@ -16,7 +16,7 @@ function DataChart({items}) {
     }
 
     setCities(uniqueCities);
-  }, []);
+  }, [items]);
 
   let data = [];
   items.forEach((item) => {
